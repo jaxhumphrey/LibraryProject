@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  libraryproject:
+    image: ${DOCKER_REGISTRY-}libraryproject
+    build:
+      context: .
+      dockerfile: LibraryProject/Dockerfile
