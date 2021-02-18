@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model IQueryable<Book>
 
-<div>
-    <h1>BOOOOOOKS</h1>
+<button class="btn"></button>
+
+<div style="font-style:italic">
+    <h1 style="text-align:center">BOOOOOOKS:</h1>
 </div>
+<br /><br />
+@foreach (var x in Model)
+{ //list out books dynamically 
+ <div style="align-content:center">
+    <div class="border border-dark" style="background-color:black">
+        <h1 class="text-white">Title: @x.Title</h1>
+        <h2 class="text-white">Author: @x.Author</h2>
+        <h3 class="text-white">Publisher: @x.Publisher</h3>
+        <h4 class="text-white">ISBN: @x.ISBN</h4>
+        <h5 class="text-white">Category: @x.ClassCat</h5>
+        <p class="text-white">$@x.Price</p>
+
+    </div>
+</div>
+}

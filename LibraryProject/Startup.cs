@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace LibraryProject
 {
@@ -62,6 +63,7 @@ namespace LibraryProject
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            //Makes sure database is populated
             SeedData.EnsurePopulated(app);
 
         }

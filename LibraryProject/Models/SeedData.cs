@@ -23,12 +23,32 @@ namespace LibraryProject.Models
 
                     new Book
                     {
-                        BookId = 1,
-                        Author = "Grayson Fattelah",
-                        Publisher = "IS Wolves",
-                        ISBN = "1234",
-                        ClassCat = "Motivation/Frat Energy",
-                        Price = 25.25
+                        Title = "Les Miserables",
+                        Author = "Victor Hugo",
+                        Publisher = "Signet",
+                        ISBN = "978-0451419439",
+                        ClassCat = "Fiction, Classic",
+                        Price = 9.95
+                    },
+
+                    new Book
+                    {
+                        Title = "Team of Rivals",
+                        Author = "Doris Kearns Goodwin",
+                        Publisher = "Simon & Schuster",
+                        ISBN = "978-0743270755",
+                        ClassCat = "Non-Fiction, Biography",
+                        Price = 14.58
+                    },
+
+                    new Book
+                    {
+                        Title = "The Snowball",
+                        Author = "Alice Schroeder",
+                        Publisher = "Bantam",
+                        ISBN = "978-0553384611",
+                        ClassCat = "Non-Fiction, Biography",
+                        Price = 21.54
                     }
 
                   );
