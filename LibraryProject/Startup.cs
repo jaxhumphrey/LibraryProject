@@ -56,11 +56,15 @@ namespace LibraryProject
 
             app.UseAuthorization();
 
+            //this set up makes the URL look prettier... ex /Books/3 instead of ?page=3
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "Books/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             //Makes sure database is populated

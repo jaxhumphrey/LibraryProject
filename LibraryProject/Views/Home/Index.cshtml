@@ -2,25 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Book>
+@model BookListViewModel
 
 <button class="btn"></button>
 
-<div style="font-style:italic">
-    <h1 style="text-align:center">BOOOOOOKS:</h1>
-</div>
-<br /><br />
-@foreach (var x in Model)
-{ //list out books dynamically 
- <div style="align-content:center">
-    <div class="border border-dark" style="background-color:black">
-        <h1 class="text-white">Title: @x.Title</h1>
-        <h2 class="text-white">Author: @x.Author</h2>
-        <h3 class="text-white">Publisher: @x.Publisher</h3>
-        <h4 class="text-white">ISBN: @x.ISBN</h4>
-        <h5 class="text-white">Category: @x.ClassCat</h5>
-        <p class="text-white">$@x.Price</p>
+<p class="lead">Welcome to my list of books! So much knowledge it's mind bottling </p>
 
-    </div>
+<br /><br />
+@foreach (var x in Model.Books)
+{ //list out books dynamically 
+
+<div>
+    <h1 class="container">Title: @x.Title</h1>
+    <h5 class="container">Author: @x.Author</h5>
+    <h5 class="container">Publisher: @x.Publisher</h5>
+    <h5 class="container">ISBN: @x.ISBN</h5>
+    <h5 class="container">Category: @x.ClassCat</h5>
+    <h5 class="container"><mark>$@x.Price</mark></h5>
+    <h5 class="container">@x.NumPages Pages</h5>
+
 </div>
+
 }
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     class="btn-group pull-rigt m-1"></div>
