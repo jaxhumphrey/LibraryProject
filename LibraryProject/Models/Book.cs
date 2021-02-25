@@ -28,5 +28,7 @@ namespace LibraryProject.Models
 
         [Required(ErrorMessage = "Please enter a price")]
         public double Price { get; set; }
+
+        public int NumPages { get; set; }
     }
 }
