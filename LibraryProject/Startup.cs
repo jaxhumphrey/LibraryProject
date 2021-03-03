@@ -30,7 +30,7 @@ namespace LibraryProject
 
             services.AddDbContext<BookDBContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionString:BookAppConnection"]);
+               options.UseSqlite(Configuration["ConnectionString:BookAppConnection"]);
            });
 
             services.AddScoped<IBookRepository, EFBookRepository>();
@@ -57,10 +57,24 @@ namespace LibraryProject
             app.UseAuthorization();
 
             //this set up makes the URL look prettier... ex /Books/3 instead of ?page=3
+            //Endpoints let you determine what you want the URL to look like and 
+            //where you want to send the user
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    "pagination",
+                
+                endpoints.MapControllerRoute("catpage",
+                "{category}/{page:int}",
+                new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
+                endpoints.MapControllerRoute("pagination",
                     "Books/P{page}",
                     new { Controller = "Home", action = "Index" });
 

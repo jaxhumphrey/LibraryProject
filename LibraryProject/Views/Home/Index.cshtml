@@ -3,27 +3,25 @@
 }
 
 @model BookListViewModel
+<!--<button class="btn"></button>-->
 
-<button class="btn"></button>
+@*@foreach (var c in Model.Books.ToList())
+{
+    <button>c.Category</button>
+}*@
 
 <p class="lead">Welcome to my list of books! So much knowledge it's mind bottling </p>
 
-<br /><br />
+<br />
+<br />
 @foreach (var x in Model.Books)
-{ //list out books dynamically 
-
-<div>
-    <h1 class="container">Title: @x.Title</h1>
-    <h5 class="container">Author: @x.Author</h5>
-    <h5 class="container">Publisher: @x.Publisher</h5>
-    <h5 class="container">ISBN: @x.ISBN</h5>
-    <h5 class="container">Category: @x.ClassCat</h5>
-    <h5 class="container"><mark>$@x.Price</mark></h5>
-    <h5 class="container">@x.NumPages Pages</h5>
-
-</div>
-
+{ //calls the BookSummary.cshtml where the book info is held
+    <partial name="BookSummary" model="x" />
 }
+
+
+<!--These tags in the div are linked to the PageLinkTagHelper class in the
+    infrastructure folder. Allows info to be passed between pages-->
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
      class="btn-group pull-rigt m-1"></div>

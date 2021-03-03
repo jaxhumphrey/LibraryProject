@@ -23,8 +23,11 @@ namespace LibraryProject.Models
         [Required(ErrorMessage = "Please enter a ISBN")]
         public string ISBN { get; set; }
 
-        [Required(ErrorMessage = "Please enter a category/class")]
-        public string ClassCat { get; set; }
+        [Required(ErrorMessage = "Please enter a class")]
+        public string Class { get; set; }
+
+        [Required(ErrorMessage = "Please enter a category")]
+        public string Category { get; set; }
 
         [Required(ErrorMessage = "Please enter a price")]
         public double Price { get; set; }
