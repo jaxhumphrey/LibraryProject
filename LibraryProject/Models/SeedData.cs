@@ -27,7 +27,8 @@ namespace LibraryProject.Models
                         Author = "Victor Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
-                        ClassCat = "Fiction, Classic",
+                        Class= "Classic",
+                        Category = "Fiction",
                         Price = 9.95,
                         NumPages = 1488
                     },
@@ -38,7 +39,8 @@ namespace LibraryProject.Models
                         Author = "Doris Kearns Goodwin",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
-                        ClassCat = "Non-Fiction, Biography",
+                        Class = "Biography",
+                        Category = "Non-Fiction",
                         Price = 14.58,
                         NumPages = 944
                     },
@@ -49,7 +51,8 @@ namespace LibraryProject.Models
                         Author = "Alice Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
-                        ClassCat = "Non-Fiction, Biography",
+                        Class = "Biography",
+                        Category ="Non-Fiction",
                         Price = 21.54,
                         NumPages = 976
                     },
@@ -60,7 +63,8 @@ namespace LibraryProject.Models
                         Author = "Ronald C. White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
-                        ClassCat = "Non-Fiction, Biography",
+                        Class = "Non-Fiction",
+                        Category = "Biography",
                         Price = 11.61,
                         NumPages = 832
                     },
@@ -71,7 +75,8 @@ namespace LibraryProject.Models
                         Author = "Laura Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
-                        ClassCat = "Non-Fiction, Historical",
+                        Class = "Non-Fiction",
+                        Category = "Historical",
                         Price = 13.33,
                         NumPages = 528
                     },
@@ -82,7 +87,8 @@ namespace LibraryProject.Models
                         Author = "Michael Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0812981254",
-                        ClassCat = "Fiction, Historical fiction",
+                        Class = "Fiction",
+                        Category = "Historical fiction",
                         Price = 15.95,
                         NumPages = 288
                     },
@@ -93,7 +99,8 @@ namespace LibraryProject.Models
                           Author = "Cal Newport",
                           Publisher = "Grand Central Publishing",
                           ISBN = "978-0812981254",
-                          ClassCat = "Non-Fiction, Self-Help",
+                          Class = "Non-Fiction",
+                          Category = "Self-Help",
                           Price = 14.99,
                           NumPages = 304
                       },
@@ -104,7 +111,8 @@ namespace LibraryProject.Models
                             Author = "Michael Abrashoff",
                             Publisher = "Grand Central Publishing",
                             ISBN = "978-0812981254",
-                            ClassCat = "Non-Fiction, Self-Help",
+                            Class = "Non-Fiction",
+                            Category = "Self-Help",
                             Price = 21.66,
                             NumPages =240
                         },
@@ -115,7 +123,8 @@ namespace LibraryProject.Models
                             Author = "John Grisham",
                             Publisher = "Bantam",
                             ISBN = "978-0812981254",
-                            ClassCat = "Fiction Thrillers",
+                            Class = "Fiction",
+                            Category = "Thriller",
                             Price = 15.03,
                             NumPages = 400
                         },
@@ -126,7 +135,8 @@ namespace LibraryProject.Models
                             Author = "Suzanne Collins",
                             Publisher = "Scholastic",
                             ISBN = "978-0812981254",
-                            ClassCat = "Fiction Thriller",
+                            Class = "Fiction",
+                            Category = "Thriller",
                             Price = 20.99,
                             NumPages = 374
                         },
@@ -137,7 +147,8 @@ namespace LibraryProject.Models
                             Author = "Stephen Covey",
                             Publisher = "Free Press",
                             ISBN = "978-0812981254",
-                            ClassCat = "Self-Help",
+                            Class = "Fiction",
+                            Category = "Self-Help",
                             Price = 15.75,
                             NumPages = 381
 
@@ -150,7 +161,8 @@ namespace LibraryProject.Models
                             Author = "Stephen Covey",
                             Publisher = "Free Press",
                             ISBN = "978-0812981254",
-                            ClassCat = "Self-Help",
+                            Class = "Self-Help",
+                            Category = "Fiction",
                             Price = 19.66,
                             NumPages = 291
                         }

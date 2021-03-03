@@ -32,6 +32,10 @@ namespace LibraryProject.Infrastructure
 
         public string PageAction { get; set; }
 
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
+
         public bool PageClassesEnabled { get; set; }
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -48,7 +52,9 @@ namespace LibraryProject.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction,
+                    PageUrlValues);
                 
                 if(PageClassesEnabled)
                 {

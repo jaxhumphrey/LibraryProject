@@ -18,18 +18,19 @@ namespace LibraryProject.Controllers
 
         //Items per page 
         public int PageSize = 5;
-
+                                //DB context -> EFBookrepository -> IBookRepository
         public HomeController(ILogger<HomeController> logger, IBookRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {  
             return View(new BookListViewModel
-            {
+            {//sql type language, queries
                 Books = _repository.Books
+                    .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
@@ -38,8 +39,11 @@ namespace LibraryProject.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    //Gets count of each category, makes it so there aren't always 3 pages
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x=> x.Category == category).Count()
+                },
+                CurrentCategory = category
             }); 
         }
 
