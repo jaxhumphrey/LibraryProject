@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace LibraryProject.Components
-{
+{   //inherits from View component class
     public class CartSummaryViewComponent : ViewComponent
     {
         private Cart cart;

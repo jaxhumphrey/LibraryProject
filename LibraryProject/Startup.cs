@@ -42,6 +42,8 @@ namespace LibraryProject
             //makes information "stick"??
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            //For carts
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }

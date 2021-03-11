@@ -14,7 +14,7 @@ namespace LibraryProject.Models
         public static Cart GetCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?
-            .HttpContext.Session;
+            .HttpContext.Session; //Gets cart
             SessionCart cart = session?.GetJson<SessionCart>("Cart")
             ?? new SessionCart();
             cart.Session = session;
@@ -24,16 +24,18 @@ namespace LibraryProject.Models
         [JsonIgnore]
         public ISession Session { get; set; }
         public override void AddItem(Book book, int quantity)
-        {
+        {       //sets cart
             base.AddItem(book, quantity);
             Session.SetJson("Cart", this);
         }
 
         public override void RemoveLine(Book book)
-        {
+        {       //sets card
             base.RemoveLine(book);
             Session.SetJson("Cart", this);
         }
+
+        //Clear Cart
         public override void Clear()
         {
             base.Clear();
