@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FightingStyle
+<h2>Bow to your Sensei</h2>
+
+<h1>BOW TO YOUR SENSEI</h1>
+
+<form asp-action="SubmitFightingForm" method="post">
+    <label asp-for="StyleName">Enter your favorite fighting style: </label>
+    <input asp-for="StyleName" />
+    <label asp-for="StrongestMove">Enter your strongest move: </label>
+    <input asp-for="StrongestMove" />
+    <label asp-for="NumberKO">Enter your number of KO's: </label>
+    <input asp-for="NumberKO" />
+    <input type="submit" value="SUBMIT" />
+</form>
+

@@ -7,12 +7,14 @@ namespace LibraryProject.Models
     {
         private BookDBContext _context;
 
-        //Constructor
+        //Constructor           Pulls
         public EFBookRepository(BookDBContext context)
         {
+            //context of BookDBContext to EFBookRepository _context
             _context = context;
         }
 
+         //Function that returns all books from _context.
         public IQueryable<Book> Books => _context.Books;
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using LibraryProject.Models;
+using LibraryProject.Models; //ALLOW ACCESS TO MODELS
 using LibraryProject.Models.ViewModels;
 
 namespace LibraryProject.Controllers
@@ -29,6 +29,7 @@ namespace LibraryProject.Controllers
         {  
             return View(new BookListViewModel
             {//sql type language, queries
+                //Books, PagingInfo and CurrentCategory are being created here to be passed into the BookListViewModel
                 Books = _repository.Books
                     .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookId)
@@ -45,6 +46,17 @@ namespace LibraryProject.Controllers
                 },
                 CurrentCategory = category
             }); 
+        }
+
+        public IActionResult FightingForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SubmitFightingForm(FightingStyle fightme)
+        {
+            return View("DisplayFightingStyles", fightme); //fightme = instance of FightingStyle class
         }
 
         public IActionResult Privacy()

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace LibraryProject.Infrastructure
 {
     //This page helps create tag helpers that build dynamic HTML pages
+    //Bc it says "div" right here, all these things can be added to div tag
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper
     {
@@ -32,10 +33,11 @@ namespace LibraryProject.Infrastructure
 
         public string PageAction { get; set; }
 
+        //Grab the part after url- from the tag, put it into dictionary ex. category, category object
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
-
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
+        //things 
         public bool PageClassesEnabled { get; set; }
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -52,10 +54,14 @@ namespace LibraryProject.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
+
+
                 PageUrlValues["page"] = i;
-                tag.Attributes["href"] = urlHelper.Action(PageAction,
-                    PageUrlValues);
+
+                //PageAction says we go to Index, Parameters we will send are from the PageUrlValues ex. category: object
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
                 
+
                 if(PageClassesEnabled)
                 {
                     tag.AddCssClass(PageClass);

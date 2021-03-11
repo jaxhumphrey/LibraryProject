@@ -10,7 +10,7 @@ namespace LibraryProject.Components
     public class NavigationMenuViewComponent : ViewComponent
     {
 
-        //Builds repository based off of IBookRepository.cs
+        // declared Iquerable list of books IBookRepository.cs
         private IBookRepository repository;
 
         public NavigationMenuViewComponent (IBookRepository b)
@@ -21,13 +21,12 @@ namespace LibraryProject.Components
 
         //automatically called when ViewComponent is added to screen
         public IViewComponentResult Invoke() 
-
             
         {
-            //Allows us to Highlight cateory page we clock on
+            //pulls data called "category" from url and puts it into the viewbag
             ViewBag.SelectedCategory = RouteData?.Values["category"];
 
-            //queries and gets data from the repository, selects certain ones, makes sure they are unique and then orders by them
+            //queries and gets data from the repository, selects certain ones, makes sure they are unique, then orders by them sends to "default page"
             return View(repository.Books
                 .Select(x => x.Category)
                 .Distinct()

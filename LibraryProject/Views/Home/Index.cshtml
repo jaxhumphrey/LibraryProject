@@ -5,19 +5,18 @@
 @model BookListViewModel
 <!--<button class="btn"></button>-->
 
-@*@foreach (var c in Model.Books.ToList())
-{
-    <button>c.Category</button>
-}*@
-
 <p class="lead">Welcome to my list of books! So much knowledge it's mind bottling </p>
 
+<br />
+<br />
+<a asp-action="FightingForm"><button>Click here to go to the Fighting Page</button></a>
 <br />
 <br />
 @foreach (var x in Model.Books)
 { //calls the BookSummary.cshtml where the book info is held
     <partial name="BookSummary" model="x" />
 }
+<!--asp-validation-summary="All" validates the form-->
 
 
 <!--These tags in the div are linked to the PageLinkTagHelper class in the
