@@ -10,7 +10,7 @@ namespace LibraryProject.Models
         [Required]
         public int BookId { get; set; }
 
-        [Required(ErrorMessage ="Please enter a title")]
+        [Required(ErrorMessage = "Please enter a title")]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Please enter an author")]
@@ -33,5 +33,7 @@ namespace LibraryProject.Models
         public double Price { get; set; }
 
         public int NumPages { get; set; }
+
+        //public static string SOmeTHING {get; set;} STATIC means it will show up the same in all instances of the class
     }
 }
